@@ -50,22 +50,22 @@ curl -X POST http://127.0.0.1:8000/api/token/admin/ -H "content-type: applicatio
 You can get access token from above command.
 
 # Products service
-1. Get all product
+1. create product
+```
+curl --location --request POST http://127.0.0.1:8000/api/v1/products-create/ --header "Authorization: Bearer {token}" --header "Content-Type: application/x-www-form-urlencoded" --data-urlencode "data={product}"
+```
+2. Get all product
 ```
 curl --location --request GET http://127.0.0.1:8000/api/v1/products/ --header "Authorization:Bearer {token}"
 ```
-2. Get product from id
+3. Get product from id
 ```
 curl --location --request GET http://127.0.0.1:8000/api/v1/products/{product_id}/ --header "Authorization:Bearer {token}"
 ```
-3. Update product
+
+4. Update product
 ```
 curl --request PUT "http://127.0.0.1:8000/api/v1/products-update/{product_id}/" --header "Authorization: Bearer {token}" --header "Content-Type: application/x-www-form-urlencoded" --data-urlencode "data={updateData}"
-```
-
-4. create product
-```
-curl --location --request POST http://127.0.0.1:8000/api/v1/products-create/ --header "Authorization: Bearer {token}" --header "Content-Type: application/x-www-form-urlencoded" --data-urlencode "data={new_product_data}"
 ```
 
 5. delete product (soft)
